@@ -4,16 +4,24 @@ import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 
-@ConfigGroup("example")
+@ConfigGroup("GOTRuneTracker")
 public interface GOTRuneTrackerConfig extends Config
 {
 	@ConfigItem(
-		keyName = "greeting",
-		name = "Welcome Greeting",
-		description = "The message to show to the user when they login"
-	)
-	default String greeting()
+			keyName = "tracker_reset",
+			name = "Enable Reset Cooldown",
+			description = "If Enabled the plugin will reset your tracker after the specified cooldown.")
+	default boolean gotrunetracker_enable_reset()
 	{
-		return "Runes";
+		return false;
+	}
+
+	@ConfigItem(
+			keyName = "tracker_timeout",
+			name = "Reset Cooldown",
+			description = "How long the plugin will wait to reset it's tracker when you're away from the GOTR area.")
+	default int gotrrunetracker_reset_cooldown()
+	{
+		return 10;
 	}
 }

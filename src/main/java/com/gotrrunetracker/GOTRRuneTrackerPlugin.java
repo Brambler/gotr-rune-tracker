@@ -41,7 +41,8 @@ public class GOTRRuneTrackerPlugin extends Plugin
 	{
 		if (gameStateChanged.getGameState() == GameState.LOGGED_IN)
 		{
-			client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "GOTR Rune Tracker " + config.greeting(), null);
+			// THIS PUTS STUFF IN THE CHAT
+			client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "GOTR Rune Tracker Loaded!", null);
 		}
 	}
 
